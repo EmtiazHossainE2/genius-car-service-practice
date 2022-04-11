@@ -1,0 +1,44 @@
+[
+    {
+        "id": "3101",
+        "name": "Lamborghini Diablo ",
+        "img": "https://i.ibb.co/t3TvD4y/repair1.jpg ",
+        "description": "Automobile repair workshops that are independently owned and operated businesses. These may also include regional or national chains and franchises including OEM (Original Equipment Manufacturer) repair sites such as in car dealerships. In the United States, these sites are commonly certified by their respective manufacturer to perform warranty and recall repairs by that manufacturer or distributor such as oil changes and other preventative maintenance items. Independent automobile repair shops in the US may also achieve certification through manufacturer sponsored programs ",
+        "price": "350 "
+    },
+    {
+        "id": "3102",
+        "name": "Ford Raptor ",
+        "img": "https://i.ibb.co/5sbLxhX/repair2.jpg ",
+        "description": "European Union law (The EC Block Exemption Regulation 1400/2002 (October 2003[2])) permits motorists more flexibility in selecting where their car is serviced. Maintenance and service work does not have to be done by the main dealer providing the garage uses Original Equipment 'Matching Quality' parts follows the manufacturer's service schedules. The Block Exemption Regulation (BER) covers service and maintenance during the warranty period and prohibits vehicle manufacturers’ warranties from including restrictive conditions. ",
+        "price": "550 "
+    },
+    {
+        "id": "3103",
+        "name": "Ferrari Testarossa ",
+        "img": " https://i.ibb.co/9t7LHMR/repair3.jpg",
+        "description": " Specialty automobile repair shops are shops specializing in certain parts such as brakes, mufflers and exhaust systems, transmissions, body parts, automobile electrification, automotive air conditioner repairs, automotive glass repairs and installation, and wheel alignment or those who only work on certain brands of vehicle or vehicles from certain continents of the world. There are also automotive repair shops that specialize in vehicle modifications and customization. Oftentimes, various specialized auto repair shops will have varied infrastructure and facilities (for specific jobs or vehicles), as well as technicians and mechanics with different qualifications.",
+        "price": "410 "
+    },
+    {
+        "id": "3104",
+        "name": "Porsche 911 Carrera ",
+        "img": "https://i.ibb.co/4Sshx42/repair4.jpg ",
+        "description": "Online automobile service marketplaces such as Openbay and RepairPal are providing consumers choice and convenience when it comes to getting their vehicles serviced. They provide consumers a choice in service centers to select from; service department at a car dealership, independent automotive repair facilities such as Meineke, Midas, AAMCO, GreaseMonkey, Goodyear, All Tune and Lube, and many others. They also have mobile mechanics such as Repair Smith and Wrench where service is performed at a location you dictate (home, office, other). ",
+        "price": "530 "
+    },
+    {
+        "id": "3105",
+        "name": "Jensen Interceptor ",
+        "img": " https://i.ibb.co/4jRFDFW/repair5.jpg",
+        "description": " In countries such as the UK, the mobile car body repair sectors has experienced high growth by way of mobile SMART Repair companies providing mobile car body repair services, such as Bumper Repairs, auto body repair, paintless dent repair and paintwork defect repairs to private and commercial consumers, typically within the industry framework of refinishing vehicle damage on a localised basis, where the area of damage being repaired is not in excess of an A4 sheet of paper.",
+        "price": "360 "
+    },
+    {
+        "id": "3106",
+        "name": "Jeep Gladiator ",
+        "img": "https://i.ibb.co/YPTBF1k/repair6.jpg ",
+        "description": "The National Institute for Automotive Service Excellence (ASE) is a professional certification group that certifies professionals and shops in the automotive repair and service industry in the United States and parts of Canada. It is an independent, non-profit organization created in 1972[1] in response to consumers needing to distinguish between potentially incompetent and competent automotive technicians.[2] The organization aims to improve the quality of vehicle repair and service through the testing and certification of repair and service professionals. ",
+        "price": "420 "
+    }
+]
