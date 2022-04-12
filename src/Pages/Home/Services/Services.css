@@ -1,4 +1,5 @@
 .service-title {
+    text-align: center;
     position: relative;
     line-height: 80px;
     font-size: 30px;
@@ -24,4 +25,16 @@
     top: 62%;
     left: 37%;
     transform: translateX(-50%);
+}
+
+@media only screen and (max-width:576px) {
+
+
+    .service-title::before {
+        display: none;
+    }
+
+    .service-title::after {
+        display: none;
+    }
 }
