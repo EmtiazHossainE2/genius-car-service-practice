@@ -1,0 +1,20 @@
+/* responsive */
+.carousel-indicators {
+    display: none;
+}
+
+
+@media only screen and (max-width:576px) {
+
+    .carousel-caption p,
+    h3 {
+        display: none;
+    }
+
+    .carousel-caption button {
+        background-color: rgb(243, 233, 233);
+        color: rgb(9, 8, 8);
+    }
+
+
+}
