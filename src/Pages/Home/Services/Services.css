@@ -1,0 +1,27 @@
+.service-title {
+    position: relative;
+    line-height: 80px;
+    font-size: 30px;
+}
+
+.service-title::before {
+    content: '';
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    top: 62%;
+    right: 29%;
+    transform: translateX(-50%);
+}
+
+.service-title::after {
+    content: '';
+    background: #ff523b;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    top: 62%;
+    left: 37%;
+    transform: translateX(-50%);
+}
