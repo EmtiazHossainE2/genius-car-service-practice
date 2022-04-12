@@ -1,0 +1,14 @@
+.nav-style a {
+    text-decoration: none;
+    margin-right: 25px;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* responsive */
+@media only screen and (max-width:576px) {
+    /* .logo {
+        width: 300px;
+    } */
+}
