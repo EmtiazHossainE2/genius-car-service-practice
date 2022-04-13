@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css'
-import { Container, Nav, Navbar, NavDropdown, NavLink } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import logo from '../../images/logo.png'
 import CustomLink from '../CustomLink/CustomLink';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto"></Nav>
                         <Nav className='nav-style'>
-                            <Nav.Link as={CustomLink} to='/'>Home</Nav.Link>
+                            <Nav.Link as={CustomLink} to='/home'>Home</Nav.Link>
                             <Nav.Link className='text-light' href="home#services">Service</Nav.Link>
                             <Nav.Link className='text-light' href="home#experts">Experts</Nav.Link>
                             {/* <Nav.Link as={CustomLink} to='/home#services'>Services </Nav.Link> */}

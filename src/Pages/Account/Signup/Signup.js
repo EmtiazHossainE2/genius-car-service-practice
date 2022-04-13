@@ -5,6 +5,20 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const navigate = useNavigate()
+
+
+    const handleRegister = event => {
+        event.preventDefault()
+        const name = event.target.name.value
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        console.log(name, email, password);
+    }
+
+
+
+
     return (
         <div className='bg-img2'>
             <div className="row container py-5 mx-2">
@@ -12,16 +26,16 @@ const Signup = () => {
                     <h3 className='text-center pb-3'>Hello There,</h3>
                     <h5 className='text-center pb-3'>Register now to explore more</h5>
 
-                    <Form >
+                    <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3 " controlId="formBasicUsername">
                             <Form.Label>Your User Name</Form.Label>
-                            <Form.Control type="name" placeholder="Enter name" required />
+                            <Form.Control type="name" name='name' placeholder="Enter name" required />
 
                         </Form.Group>
 
                         <Form.Group className="mb-3 " controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" required />
+                            <Form.Control type="email" name='email' placeholder="Enter email" required />
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -29,13 +43,13 @@ const Signup = () => {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" required />
+                            <Form.Control type="password" name='password' placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Login
+                            Register
                         </Button>
                     </Form>
                     <p className='toggle-page'>
