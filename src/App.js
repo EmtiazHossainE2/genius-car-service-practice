@@ -14,6 +14,7 @@ import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 import Footer from './Pages/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import ServiceDetails from './Pages/ServiceDetail/ServiceDetails';
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/home' element={<Home />}></Route>
+                <Route path='/service/:serviceId' element={<ServiceDetails></ServiceDetails>}></Route>
                 <Route path='/contact' element={<Contact />}></Route>
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/signup' element={<Signup />}></Route>
