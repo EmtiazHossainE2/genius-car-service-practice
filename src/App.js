@@ -15,11 +15,13 @@ import Signup from './Pages/Account/Signup/Signup';
 import Login from './Pages/Account/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetails from './Pages/ServiceDetail/ServiceDetails';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
     return (
         <div >
             <Header></Header>
+            <Toaster></Toaster>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/home' element={<Home />}></Route>

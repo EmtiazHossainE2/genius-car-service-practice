@@ -2,22 +2,38 @@ import React from 'react';
 import './Signup.css'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../../Firebase/firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 
 const Signup = () => {
     const navigate = useNavigate()
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
+    //
+    if(user){
+        toast.success(`Welcome to Car Service `, { id: "welcome" });
+        navigate('/')
+    }
+    if(error){
+        toast.error(`Something is wrong`, { id: "error" });
+    }
 
+    //handle register
     const handleRegister = event => {
         event.preventDefault()
         const name = event.target.name.value
         const email = event.target.email.value
         const password = event.target.password.value
+        createUserWithEmailAndPassword(email, password)
 
         console.log(name, email, password);
     }
-
-
-
 
     return (
         <div className='bg-img2'>
