@@ -1,19 +1,38 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import auth from '../../../Firebase/firebase.init';
 import './Login.css'
 const Login = () => {
     const navigate = useNavigate()
     const emailRef = useRef('')
     const passwordRef = useRef('')
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
+
+    //
+    if (user) {
+        toast.success(`Welcome Back `, { id: "welcome" });
+        navigate('/')
+    }
+    if (error) {
+        toast.error(`Something is wrong`, { id: "error" });
+    }
     //handle log in
     const handleLogin = e => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         console.log(email, password);
+        signInWithEmailAndPassword(email, password)
     }
 
 
@@ -22,7 +41,7 @@ const Login = () => {
             <div className="row container py-5 mx-2">
                 <div className="col-md-6 text-light custom-style ">
                     <h3 className='text-center pb-3'>Hello There,</h3>
-                    <h5 className='text-center pb-3'>Welcome Back</h5>
+                    <h4 className='text-center pb-3'>Log In Now</h4>
 
                     <Form onSubmit={handleLogin}>
                         <Form.Group className="mb-3 " controlId="formBasicEmail">

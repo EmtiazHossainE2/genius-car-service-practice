@@ -16,6 +16,7 @@ import Login from './Pages/Account/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetails from './Pages/ServiceDetail/ServiceDetails';
 import { Toaster } from 'react-hot-toast';
+import Profile from './Pages/Account/Profile/Profile';
 
 const App = () => {
     return (
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/signup' element={<Signup />}></Route>
                 <Route path='/login' element={<Login />}></Route>
+                <Route path='/profile' element={<Profile/>}></Route>
                 <Route path='*' element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
