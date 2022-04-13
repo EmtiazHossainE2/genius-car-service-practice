@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, NavLink } from 'react-bootstrap';
 import logo from '../../images/logo.png'
 import CustomLink from '../CustomLink/CustomLink';
 
@@ -17,17 +17,14 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto"></Nav>
                         <Nav className='nav-style'>
-                            <CustomLink to='/'>Home</CustomLink>
-                            <CustomLink to='/services'>Services</CustomLink>
-                            <CustomLink to='/about'>About </CustomLink>
-                            <CustomLink to='/contact'>Contact</CustomLink>
-                            <CustomLink to='/signup'>Sign up</CustomLink>
-                            <CustomLink to='/login'>Log in</CustomLink>
-                            {/* <NavDropdown title="Our Sponsor" id="collasible-nav-dropdown">
-                                <CustomLink className='text-danger' to='/emajhon'>Ema John </CustomLink>
-                                <CustomLink className='text-danger' to='/model'>Model</CustomLink>
-                                <CustomLink className='text-danger' to='/Scncs'>Scncs</CustomLink>
-                            </NavDropdown> */}
+                            <NavLink><CustomLink to='/'>Home</CustomLink></NavLink>
+                            <NavLink><CustomLink to='/services'>Services</CustomLink></NavLink>
+                            <NavLink><CustomLink to='/about'>About </CustomLink></NavLink>
+                            <NavLink><CustomLink to='/contact'>Contact</CustomLink></NavLink>
+                            <NavDropdown className='p-0 text-light' title="Account" id="collasible-nav-dropdown">
+                                <NavLink><CustomLink to='/signup'>Sign up</CustomLink></NavLink>
+                                <NavLink><CustomLink to='/login'>Log in</CustomLink></NavLink>
+                            </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

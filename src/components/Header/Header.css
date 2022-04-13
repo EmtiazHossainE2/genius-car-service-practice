@@ -1,8 +1,16 @@
 .nav-style a {
     text-decoration: none;
-    margin-right: 25px;
-    padding: 10px;
+    margin-right: 10px;
+    padding: 2px;
     font-size: 18px;
+}
+
+.dropdown a {
+    color: #fff !important;
+}
+
+.dropdown-menu {
+    background-color: #212529 !important;
 }
 
 /* responsive */

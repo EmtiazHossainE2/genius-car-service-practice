@@ -27,9 +27,18 @@
     transform: translateX(-50%);
 }
 
-@media only screen and (max-width:576px) {
 
+@media only screen and (max-width:1200px) {
+    .service-title::before {
+        right: 60%;
+    }
 
+    .service-title::after {
+        left: 70%;
+    }
+}
+
+@media only screen and (max-width:768px) {
     .service-title::before {
         display: none;
     }
