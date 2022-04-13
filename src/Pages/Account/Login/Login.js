@@ -1,19 +1,24 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/firebase.init';
 import './Login.css'
 const Login = () => {
-    const navigate = useNavigate()
-    const emailRef = useRef('')
-    const passwordRef = useRef('')
+
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+
 
     const [
         signInWithEmailAndPassword,
         user,
-        loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
@@ -21,7 +26,7 @@ const Login = () => {
     //
     if (user) {
         toast.success(`Welcome Back `, { id: "welcome" });
-        navigate('/')
+        navigate(from, { replace: true });
     }
     if (error) {
         toast.error(`Something is wrong`, { id: "error" });
@@ -31,7 +36,6 @@ const Login = () => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password);
         signInWithEmailAndPassword(email, password)
     }
 
