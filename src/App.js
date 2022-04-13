@@ -10,9 +10,9 @@ import Header from './components/Header/Header';
 import Home from './Pages/Home/Home/Home';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
-import Signup from './Pages/Signup/Signup';
-import Login from './Pages/Login/Login';
 import Footer from './Pages/Footer/Footer';
+import Signup from './Pages/Account/Signup/Signup';
+import Login from './Pages/Account/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetails from './Pages/ServiceDetail/ServiceDetails';
 
