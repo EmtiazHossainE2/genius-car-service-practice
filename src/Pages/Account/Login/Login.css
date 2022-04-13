@@ -5,3 +5,21 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.custom-style {
+    border: 1px solid #fff;
+    padding: 20px 30px;
+    border-radius: 20px;
+
+}
+
+.toggle-page {
+    margin-top: 10px;
+    color: #e4e9f2;
+}
+
+.toggle-page span {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #c2391e;
+}
