@@ -8,8 +8,8 @@ const Service = ({ service }) => {
     //onclick diye kora jay navigate kore, Link use kore kora valo.
 
     // const handleServiceDetail = id => {
-    //     // navigate('/service/' + id)
-    //     navigate(`/service/${id}`)
+    //     // navigate('/services/' + id)
+    //     navigate(`/services/${id}`)
     // }
     return (
         <div className='col-lg-4 col-md-6 rounded-1'>
@@ -22,7 +22,7 @@ const Service = ({ service }) => {
                     <h6 className='mb-4'>Price : $ {price}</h6>
                     <p className='mb-0'>{description.slice(0, 100)}</p>
                     {/* <button onClick={() => handleServiceDetail(id)} className='btn btn-outline-danger mt-4'>Book Now: {name}</button> */}
-                    <Link to={'/service/' + id}><button className='btn btn-outline-danger mt-4'>Book Now: {name}</button></Link>
+                    <Link to={'/services/' + id}><button className='btn btn-outline-danger mt-4'>Book Now: {name}</button></Link>
                 </div>
             </div>
         </div>

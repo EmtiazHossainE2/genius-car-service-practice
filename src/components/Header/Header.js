@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar collapseOnSelect fixed='top' expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container >
                     <Navbar.Brand as={Link} to="/">
                         <img src={logo} height="40" alt="" />
@@ -19,7 +19,10 @@ const Header = () => {
                         <Nav className="me-auto"></Nav>
                         <Nav className='nav-style'>
                             <Nav.Link as={CustomLink} to='/'>Home</Nav.Link>
-                            <Nav.Link as={CustomLink} to='/service'>Service Details</Nav.Link>
+                            <Nav.Link className='text-light' href="home#services">Service</Nav.Link>
+                            <Nav.Link className='text-light' href="home#experts">Experts</Nav.Link>
+                            {/* <Nav.Link as={CustomLink} to='/home#services'>Services </Nav.Link> */}
+                            {/* <Nav.Link as={CustomLink} to='home#experts'>Experts</Nav.Link> */}
                             <Nav.Link as={CustomLink} to='/about'>About</Nav.Link>
                             <Nav.Link as={CustomLink} to='/contact'>Contact</Nav.Link>
                             <NavDropdown className='p-0 text-light' title="Account" id="collasible-nav-dropdown">
