@@ -53,8 +53,14 @@ const Signup = () => {
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Control type="password" name='password' placeholder="Password" required />
                         </Form.Group>
-                        {loading && <Loading />}
-                        <Button variant="primary" type="submit">
+                        <div className='d-flex '>
+                            <div className='fw-bold text-primary mb-3'>
+                                <input  type="checkbox" name="terms" id="terms" />
+                                <label htmlFor="terms" className='ps-1' style={{cursor : 'pointer'}}>Accept Terms and Conditions</label>
+                            </div>
+                            <div>{loading && <Loading />}</div>
+                        </div>
+                        <Button variant="primary" type="submit" className='w-100 fs-5'>
                             Register
                         </Button>
                     </Form>

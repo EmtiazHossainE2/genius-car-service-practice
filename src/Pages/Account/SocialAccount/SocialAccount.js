@@ -50,13 +50,13 @@ const SocialAccount = () => {
 
     return (
         <div >
-            <div className='or-style d-flex align-items-center '>
-                <div style={{height: '2px',width : '30%'}} className='line-left d-block bg-dark'></div>
+            <div className='or-style d-flex align-items-center justify-content-center'>
+                <div style={{height: '2px',width : '40%'}} className='line-left d-block bg-dark'></div>
                 <p className='mt-2 px-3'>Or</p>
-                <div style={{height: '2px',width : '35%'}} className='line-right d-block bg-dark'></div>
+                <div style={{height: '2px',width : '40%'}} className='line-right d-block bg-dark'></div>
             </div>
             {errorMessage}
-            <div className='social-icon d-flex container'>
+            <div className='social-icon d-flex align-items-center justify-content-center container'>
                 <img onClick={() => signInWithGoogle()} src={google} alt="" />
                 <img onClick={() => signInWithFacebook()} src={facebook} alt="" />
                 <img onClick={() => signInWithGithub()} src={github} alt="" />

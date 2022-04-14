@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import {  useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../../components/Loading/Loading';
@@ -17,7 +17,7 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || "/";
 
-    const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
     if (user) {
         toast.success(`Welcome Back `, { id: "welcome" });
@@ -49,8 +49,12 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                         </Form.Group>
-                        {loading && <Loading/>}
-                        <Button variant="primary" type="submit">
+
+                        <div className='d-flex '>
+                            <p><button className='btn btn-link text-primary fw-bold ps-0 pe-5 text-decoration-none' >Forget Password</button> </p>
+                            <div>{loading && <Loading />}</div>
+                        </div>
+                        <Button variant="primary" type="submit" className='w-100 fs-5'>
                             Login
                         </Button>
                     </Form>
@@ -58,7 +62,7 @@ const Login = () => {
                         New to Genius Car Service ?{" "}
                         <span onClick={() => navigate("/signup")}>Create New Account</span>
                     </p>
-                    <SocialAccount/>
+                    <SocialAccount />
                 </div>
             </div>
         </div>
