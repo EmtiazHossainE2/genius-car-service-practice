@@ -4,6 +4,9 @@
     padding: 2px;
     font-size: 18px;
 }
+.nav-style a:hover {
+    color: red !important;
+}
 
 .dropdown a {
     color: #fff !important;

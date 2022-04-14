@@ -27,9 +27,6 @@ const Signup = () => {
         toast.error(`Something is wrong`, { id: "error" });
     }
     
-    
-
-
     //handle register
     const handleRegister = event => {
         event.preventDefault()

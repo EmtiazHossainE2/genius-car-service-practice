@@ -42,20 +42,25 @@ const SocialAccount = () => {
          </p>
     }
 
+    //
+    const handleTwitter = () => {
+        toast.error(`Twitter Singin not available right now`, { id: "error" });
+    }
+
 
     return (
         <div >
             <div className='or-style d-flex align-items-center '>
-                <div style={{height: '2px',width : '30%'}} className='line-left d-block bg-light'></div>
+                <div style={{height: '2px',width : '30%'}} className='line-left d-block bg-dark'></div>
                 <p className='mt-2 px-3'>Or</p>
-                <div style={{height: '2px',width : '35%'}} className='line-right d-block bg-light'></div>
+                <div style={{height: '2px',width : '35%'}} className='line-right d-block bg-dark'></div>
             </div>
             {errorMessage}
             <div className='social-icon d-flex container'>
                 <img onClick={() => signInWithGoogle()} src={google} alt="" />
                 <img onClick={() => signInWithFacebook()} src={facebook} alt="" />
                 <img onClick={() => signInWithGithub()} src={github} alt="" />
-                <img  src={twitter} alt="" />
+                <img onClick={handleTwitter} src={twitter} alt="" />
             </div>
         </div>
     );
