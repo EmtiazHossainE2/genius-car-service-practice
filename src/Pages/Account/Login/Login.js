@@ -22,14 +22,16 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
 
-    //
-    
-    
     //handle log in
     const handleLogin = e => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+
+        //email error handle 
+
+
+
         signInWithEmailAndPassword(email, password)
         if (!error) {
             toast.success(`Welcome Back `, { id: "welcome" });
