@@ -9,20 +9,26 @@ import SocialAccount from '../SocialAccount/SocialAccount';
 
 const Signup = () => {
     const navigate = useNavigate()
+
+    //social 
     const [
         createUserWithEmailAndPassword,
         user,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    //
+    //success 
     if(user){
         toast.success(`Welcome to Car Service `, { id: "welcome" });
         navigate('/')
     }
+    //error
     if(error){
         toast.error(`Something is wrong`, { id: "error" });
     }
+    
+    
+
 
     //handle register
     const handleRegister = event => {
