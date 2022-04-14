@@ -23,19 +23,23 @@ const Login = () => {
 
 
     //
-    if (user) {
-        toast.success(`Welcome Back `, { id: "welcome" });
-        navigate(from, { replace: true });
-    }
-    if (error) {
-        toast.error(`Something is wrong`, { id: "error" });
-    }
+    
+    
     //handle log in
     const handleLogin = e => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password)
+        if (!error) {
+            toast.success(`Welcome Back `, { id: "welcome" });
+            navigate(from, { replace: true });
+        }
+        else {
+            toast.error(`Something is wrong`, { id: "error" });
+    
+        }
+        
     }
 
 

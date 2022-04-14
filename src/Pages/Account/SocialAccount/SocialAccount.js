@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SocialAccount.css'
 import google from '../../../images/social/Google.png'
 import facebook from '../../../images/social/facebook.png'
@@ -12,11 +12,11 @@ import auth from '../../../Firebase/firebase.init';
 const SocialAccount = () => {
     const navigate = useNavigate()
     //google
-    const [signInWithGoogle, googleUser,  googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, , googleError] = useSignInWithGoogle(auth);
     //github
-    const [signInWithGithub, githubUser,  githubError] = useSignInWithGithub(auth);
+    const [signInWithGithub, githubUser, , githubError] = useSignInWithGithub(auth);
     //facebook 
-    const [signInWithFacebook, facebookUser,  facebookError] = useSignInWithFacebook(auth);
+    const [signInWithFacebook, facebookUser,  ,facebookError] = useSignInWithFacebook(auth);
 
     let location = useLocation();
 
@@ -27,16 +27,16 @@ const SocialAccount = () => {
         toast.success(`Welcome to Car Service `, { id: "welcome" });
         navigate(from)
     }
+    // useEffect(() => {
+        
+    // },[googleUser,githubUser,facebookUser,from,navigate])
 
     //error 
     let errorMessage ; 
     if(googleError || githubError || facebookError ){
         toast.error(`Something is wrong`, { id: "error" });
-        // errorElement = <p className='text-danger'>Error: Something is wrong
-        //  {googleError?.message} 
-        //  {githubError?.message}
-        //  {facebookError?.message}
-        //  </p>
+        errorMessage = <p className='text-danger'>Error: Something is wrong.Try again please 
+         </p>
     }
 
 
@@ -47,7 +47,7 @@ const SocialAccount = () => {
                 <p className='mt-2 px-3'>Or</p>
                 <div style={{height: '2px',width : '35%'}} className='line-right d-block bg-light'></div>
             </div>
-            {/* {errorMessage} */}
+            {errorMessage}
             <div className='social-icon d-flex container'>
                 <img onClick={() => signInWithGoogle()} src={google} alt="" />
                 <img onClick={() => signInWithFacebook()} src={facebook} alt="" />
