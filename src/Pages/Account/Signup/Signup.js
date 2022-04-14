@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
+import SocialAccount from '../SocialAccount/SocialAccount';
 
 const Signup = () => {
     const navigate = useNavigate()
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
@@ -72,6 +72,7 @@ const Signup = () => {
                         Already have an account  ?{" "}
                         <span onClick={() => navigate("/login")}>Please Login</span>
                     </p>
+                    <SocialAccount></SocialAccount>
                 </div>
             </div>
         </div>
