@@ -6,27 +6,24 @@ import auth from '../../../Firebase/firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import SocialAccount from '../SocialAccount/SocialAccount';
+import Loading from '../../../components/Loading/Loading';
 
 const Signup = () => {
     const navigate = useNavigate()
 
     //social 
     const [
-        createUserWithEmailAndPassword,
-        user,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+        createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
-    //success 
-    if(user){
+    if (user) {
         toast.success(`Welcome to Car Service `, { id: "welcome" });
         navigate('/')
     }
     //error
-    if(error){
+    if (error) {
         toast.error(`Something is wrong`, { id: "error" });
     }
-    
+
     //handle register
     const handleRegister = event => {
         event.preventDefault()
@@ -48,17 +45,15 @@ const Signup = () => {
                     <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3 " controlId="formBasicUsername">
                             <Form.Control type="name" name='name' placeholder="Enter name" required />
-
                         </Form.Group>
 
                         <Form.Group className="mb-3 " controlId="formBasicEmail">
                             <Form.Control type="email" name='email' placeholder="Enter email" required />
-                        
                         </Form.Group>
-
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Control type="password" name='password' placeholder="Password" required />
                         </Form.Group>
+                        {loading && <Loading />}
                         <Button variant="primary" type="submit">
                             Register
                         </Button>
