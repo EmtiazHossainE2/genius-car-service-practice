@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Signup.css'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,7 @@ import Loading from '../../../components/Loading/Loading';
 
 const Signup = () => {
     const navigate = useNavigate()
+    const [terms , setTerms ] = useState(false)
 
     //social 
     const [
@@ -30,7 +31,9 @@ const Signup = () => {
         const name = event.target.name.value
         const email = event.target.email.value
         const password = event.target.password.value
-        createUserWithEmailAndPassword(email, password)
+        if(terms){
+            createUserWithEmailAndPassword(email, password)
+        }
 
         console.log(name, email, password);
     }
@@ -44,23 +47,23 @@ const Signup = () => {
 
                     <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3 " controlId="formBasicUsername">
-                            <Form.Control type="name" name='name' placeholder="Enter name" required />
+                            <Form.Control type="name" className='py-2' name='name' placeholder="Enter name" required />
                         </Form.Group>
 
                         <Form.Group className="mb-3 " controlId="formBasicEmail">
-                            <Form.Control type="email" name='email' placeholder="Enter email" required />
+                            <Form.Control type="email" className='py-2' name='email' placeholder="Enter email" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Control type="password" name='password' placeholder="Password" required />
+                            <Form.Control type="password" className='py-2' name='password' placeholder="Password" required />
                         </Form.Group>
                         <div className='d-flex '>
                             <div className='fw-bold text-primary mb-3'>
-                                <input  type="checkbox" name="terms" id="terms" />
-                                <label htmlFor="terms" className='ps-1' style={{cursor : 'pointer'}}>Accept Terms and Conditions</label>
+                                <input onClick={() => setTerms(!terms)} type="checkbox" name="terms" id="terms" />
+                                <label className={terms ? 'ps-1 text-primary' : 'ps-1 text-danger'} htmlFor="terms"  style={{cursor : 'pointer'}}>Accept Terms and Conditions</label>
                             </div>
                             <div>{loading && <Loading />}</div>
                         </div>
-                        <Button variant="primary" type="submit" className='w-100 fs-5'>
+                        <Button disabled={!terms} variant="primary" type="submit" className='w-100 fs-5'>
                             Register
                         </Button>
                     </Form>
