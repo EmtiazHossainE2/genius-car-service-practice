@@ -42,7 +42,7 @@ const Signup = () => {
     }
 
     return (
-        <div className='bg-img2'>
+        <div className='bg-img'>
             <div className="row container py-5 mx-2">
                 <div className="col-md-6  text-light custom-style ">
                     <h3 className='text-center pb-3'>Hello There,</h3>
@@ -50,21 +50,16 @@ const Signup = () => {
 
                     <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3 " controlId="formBasicUsername">
-                            <Form.Label>Your User Name</Form.Label>
                             <Form.Control type="name" name='name' placeholder="Enter name" required />
 
                         </Form.Group>
 
                         <Form.Group className="mb-3 " controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name='email' placeholder="Enter email" required />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
+                        
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name='password' placeholder="Password" required />
                         </Form.Group>
                         <Button variant="primary" type="submit">

@@ -8,15 +8,16 @@ import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
+import Loading from '../../../components/Loading/Loading';
 
 const SocialAccount = () => {
     const navigate = useNavigate()
     //google
-    const [signInWithGoogle, googleUser, , googleError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading , googleError] = useSignInWithGoogle(auth);
     //github
-    const [signInWithGithub, githubUser, , githubError] = useSignInWithGithub(auth);
+    const [signInWithGithub, githubUser, githubLoading , githubError] = useSignInWithGithub(auth);
     //facebook 
-    const [signInWithFacebook, facebookUser,  ,facebookError] = useSignInWithFacebook(auth);
+    const [signInWithFacebook, facebookUser, facebookLoading ,facebookError] = useSignInWithFacebook(auth);
 
     let location = useLocation();
 
@@ -27,9 +28,11 @@ const SocialAccount = () => {
         toast.success(`Welcome to Car Service `, { id: "welcome" });
         navigate(from)
     }
-    // useEffect(() => {
-        
-    // },[googleUser,githubUser,facebookUser,from,navigate])
+
+    // loading 
+    if(googleLoading || githubLoading || facebookLoading) {
+        return <Loading></Loading>
+    }
 
     //error 
     let errorMessage ; 
