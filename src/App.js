@@ -23,8 +23,8 @@ import CheckOut from './Pages/CheckOut/CheckOut';
 const App = () => {
     return (
         <div >
-            <Header></Header>
             <Toaster></Toaster>
+            <Header></Header>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path='/home' element={<Home />}></Route>

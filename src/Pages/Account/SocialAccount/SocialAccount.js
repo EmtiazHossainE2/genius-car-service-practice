@@ -7,7 +7,7 @@ import twitter from '../../../images/social/Twitter.png'
 import useSocialIcon from '../../../hooks/useSocialIcon';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithGithub } from 'react-firebase-hooks/auth';
+import { useSignInWithFacebook, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import auth from '../../../Firebase/firebase.init';
 
 const SocialAccount = () => {
@@ -19,6 +19,9 @@ const SocialAccount = () => {
 
     //github
     const [signInWithGithub, githubUser,  githubError] = useSignInWithGithub(auth);
+
+    //facebook 
+    const [signInWithFacebook, facebookUser,  facebookError] = useSignInWithFacebook(auth);
 
     let location = useLocation();
 
@@ -35,14 +38,23 @@ const SocialAccount = () => {
         navigate(from)
     }
 
-    //error 
-    if(googleError){
-        toast.error(`Something is wrong`, { id: "errorGithub" });
+    if(facebookUser){
+        toast.success(`Welcome to Car Service `, { id: "welcomeF" });
+        navigate(from)
     }
 
-    if(githubError){
-        toast.error(`Something is wrong`, { id: "errorGithub" });
-    }
+    // //error 
+    // if(googleError){
+    //     toast.error(`Something is wrong`, { id: "errorGithub" });
+    // }
+
+    // if(githubError){
+    //     toast.error(`Something is wrong`, { id: "errorGithub" });
+    // }
+
+    // if(facebookError){
+    //     toast.error(`Something is wrong`, { id: "errorFb" });
+    // }
 
 
     return (
@@ -54,7 +66,7 @@ const SocialAccount = () => {
             </div>
             <div className='social-icon d-flex container'>
                 <img onClick={handleGoogle} src={google} alt="" />
-                <img  src={facebook} alt="" />
+                <img onClick={() => signInWithFacebook()} src={facebook} alt="" />
                 <img onClick={() => signInWithGithub()} src={github} alt="" />
                 <img  src={twitter} alt="" />
             </div>

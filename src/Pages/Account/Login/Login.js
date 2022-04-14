@@ -56,14 +56,11 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
-                        </Form.Group>
                         <Button variant="primary" type="submit">
                             Login
                         </Button>
                     </Form>
-                    <p className='toggle-page'>
+                    <p className='toggle-page py-2'>
                         New to Genius Car Service ?{" "}
                         <span onClick={() => navigate("/signup")}>Create New Account</span>
                     </p>
