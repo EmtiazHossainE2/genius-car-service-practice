@@ -3,22 +3,25 @@ import './Signup.css'
 import { Button, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import SocialAccount from '../SocialAccount/SocialAccount';
 import Loading from '../../../components/Loading/Loading';
 
 const Signup = () => {
     const navigate = useNavigate()
-    const [terms , setTerms ] = useState(false)
+    const [terms, setTerms] = useState(false)
 
-    //social 
-    const [
-        createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+    
+    const [createUserWithEmailAndPassword, user, loading, error] = 
+    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
 
     if (user) {
         toast.success(`Welcome to Car Service `, { id: "welcome" });
-        navigate('/')
+        console.log(user)
     }
     //error
     if (error) {
@@ -26,14 +29,15 @@ const Signup = () => {
     }
 
     //handle register
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault()
         const name = event.target.name.value
         const email = event.target.email.value
         const password = event.target.password.value
-        if(terms){
-            createUserWithEmailAndPassword(email, password)
-        }
+
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName : name });
+        navigate('/')
 
         console.log(name, email, password);
     }
@@ -59,7 +63,7 @@ const Signup = () => {
                         <div className='d-flex '>
                             <div className='fw-bold text-primary mb-3'>
                                 <input onClick={() => setTerms(!terms)} type="checkbox" name="terms" id="terms" />
-                                <label className={terms ? 'ps-1 text-primary' : 'ps-1 text-danger'} htmlFor="terms"  style={{cursor : 'pointer'}}>Accept Terms and Conditions</label>
+                                <label className={terms ? 'ps-1 text-primary' : 'ps-1 text-danger'} htmlFor="terms" style={{ cursor: 'pointer' }}>Accept Terms and Conditions</label>
                             </div>
                             <div>{loading && <Loading />}</div>
                         </div>

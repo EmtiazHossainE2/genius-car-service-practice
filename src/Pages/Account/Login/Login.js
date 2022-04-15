@@ -25,6 +25,11 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
+
+    if(sending){
+        return <Loading/>
+    }
+
     //handle log in
     const handleLogin = e => {
         e.preventDefault()
@@ -34,12 +39,15 @@ const Login = () => {
     }
 
     // reset password 
-    const forgetPassword = async() => {
+    const forgetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-          if(sendError){
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast.success(`Rest password send `, { id: "reset" });
+        }
+        if (sendError) {
             toast.error(`Email is incorrect `, { id: "errorSend" });
-          }
+        }
     }
 
 
@@ -60,15 +68,14 @@ const Login = () => {
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Control ref={passwordRef} className='py-2 fs-5' type="password" placeholder="Password" required />
                         </Form.Group>
-
-                        <div className='d-flex '>
-                            <p><button className='btn btn-link text-primary fw-bold ps-0 pe-5 text-decoration-none' onClick={forgetPassword} >Forget Password</button> </p>
-                            <div>{loading && <Loading />}</div>
-                        </div>
                         <Button variant="primary" type="submit" className='w-100 fs-5'>
                             Login
                         </Button>
                     </Form>
+                    <div className='d-flex mt-2'>
+                        <p><button className='btn btn-link text-primary fw-bold ps-0 pe-5 text-decoration-none' onClick={forgetPassword} >Forget Password</button> </p>
+                        <div>{loading && <Loading />}</div>
+                    </div>
                     <p className='toggle-page py-2 '>
                         New to Genius Car Service ?{" "}
                         <span onClick={() => navigate("/signup")}>Create New Account</span>
