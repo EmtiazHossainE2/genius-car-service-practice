@@ -4,6 +4,7 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../../components/Loading/Loading';
+import PageTitle from '../../../components/PageTitle/PageTitle';
 import auth from '../../../Firebase/firebase.init';
 import SocialAccount from '../SocialAccount/SocialAccount';
 import './Login.css'
@@ -26,8 +27,8 @@ const Login = () => {
     }
 
 
-    if(sending){
-        return <Loading/>
+    if (sending) {
+        return <Loading />
     }
 
     //handle log in
@@ -54,6 +55,7 @@ const Login = () => {
 
     return (
         <div className='bg-img'>
+            <PageTitle title="Login"></PageTitle>
             <div className="row container py-5 mx-2">
                 <div className="col-md-6  custom-style ">
                     <h3 className='text-center pb-3 mb-3'>Welcome Back</h3>

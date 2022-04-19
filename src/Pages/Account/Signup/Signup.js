@@ -7,14 +7,15 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import toast from 'react-hot-toast';
 import SocialAccount from '../SocialAccount/SocialAccount';
 import Loading from '../../../components/Loading/Loading';
+import PageTitle from '../../../components/PageTitle/PageTitle';
 
 const Signup = () => {
     const navigate = useNavigate()
     const [terms, setTerms] = useState(false)
 
-    
-    const [createUserWithEmailAndPassword, user, loading, error] = 
-    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
+    const [createUserWithEmailAndPassword, user, loading, error] =
+        useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
@@ -36,7 +37,7 @@ const Signup = () => {
         const password = event.target.password.value
 
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName : name });
+        await updateProfile({ displayName: name });
         navigate('/')
 
         console.log(name, email, password);
@@ -44,6 +45,7 @@ const Signup = () => {
 
     return (
         <div className='bg-img'>
+            <PageTitle title="Signup"></PageTitle>
             <div className="row container py-5 mx-2">
                 <div className="col-md-6  text-light custom-style ">
                     <h3 className='text-center pb-3'>Hello There,</h3>
