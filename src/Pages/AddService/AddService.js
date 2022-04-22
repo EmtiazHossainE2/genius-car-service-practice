@@ -3,7 +3,22 @@ import { useForm } from "react-hook-form";
 
 const AddService = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data) 
+        const url = `http://localhost:5000/service`
+        fetch(url , {
+            //post [10 server]
+            method: "POST",
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body : JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+        })
+    };
     return (
         <div className='text-center my-5 w-50 mx-auto'>
             <h2>Please add service </h2>
