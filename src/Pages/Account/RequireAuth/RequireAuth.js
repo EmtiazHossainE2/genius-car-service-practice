@@ -11,7 +11,7 @@ const RequireAuth = ({ children }) => {
     console.log('inside ', user)
     let location = useLocation();
 
-    if(loading || sending){
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
@@ -21,10 +21,10 @@ const RequireAuth = ({ children }) => {
 
 
     else if (user?.emailVerified === false) {
-        return <div className='text-dark py-5 rounded-2 text-center w-50 m-auto my-3 bg-danger'>
+        return <div className='text-light py-5 rounded-2 text-center w-50 m-auto my-3 bg-danger'>
             <h2>Your email is not verified .  </h2>
             <h2>Please check your email to verify</h2>
-            <button className='btn text-light btn-dark  mt-4 py-2 '
+            <button className='btn text-dark btn-light  mt-4 py-2 '
                 onClick={async () => {
                     await sendEmailVerification();
                     toast.success('Sent email');
