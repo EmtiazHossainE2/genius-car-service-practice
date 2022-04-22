@@ -27,7 +27,7 @@ const Header = () => {
                             <Nav.Link className='text-light' href="home#experts">Experts</Nav.Link>
                             {/* <Nav.Link as={CustomLink} to='/home#services'>Services </Nav.Link> */}
                             {/* <Nav.Link as={CustomLink} to='home#experts'>Experts</Nav.Link> */}
-                            <Nav.Link as={CustomLink} to='/checkout'>Check Out</Nav.Link>
+                            <Nav.Link as={CustomLink} to='/addservice'>Add Service</Nav.Link>
                             <Nav.Link as={CustomLink} to='/about'>About</Nav.Link>
                             <Nav.Link as={CustomLink} to='/contact'>Contact</Nav.Link>
                             <NavDropdown className='p-0 text-light' title="Account" id="collasible-nav-dropdown">

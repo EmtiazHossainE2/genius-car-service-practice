@@ -11,7 +11,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => setService(data))
     }, [serviceId])
-    console.log(serviceId);
+    // console.log(serviceId);
     return (
         <div className='text-center'>
             <h2 className='py-5  mt-5'>Book your service  : {service.name} </h2>

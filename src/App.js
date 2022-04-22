@@ -19,6 +19,7 @@ import { Toaster } from 'react-hot-toast';
 import Profile from './Pages/Account/Profile/Profile';
 import RequireAuth from './Pages/Account/RequireAuth/RequireAuth';
 import CheckOut from './Pages/CheckOut/CheckOut';
+import AddService from './Pages/AddService/AddService';
 
 const App = () => {
     return (
@@ -35,7 +36,12 @@ const App = () => {
                 <Route path='/login' element={<Login />}></Route>
                 <Route path="/checkout" element={
                     <RequireAuth>
-                        <CheckOut></CheckOut>
+                        <CheckOut/>
+                    </RequireAuth>
+                }></Route>
+                <Route path="/addservice" element={
+                    <RequireAuth>
+                        <AddService/>
                     </RequireAuth>
                 }></Route>
                 <Route path='/profile' element={<Profile />}></Route>
