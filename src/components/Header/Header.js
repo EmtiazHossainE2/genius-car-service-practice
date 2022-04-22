@@ -27,9 +27,21 @@ const Header = () => {
                             <Nav.Link className='text-light' href="home#experts">Experts</Nav.Link>
                             {/* <Nav.Link as={CustomLink} to='/home#services'>Services </Nav.Link> */}
                             {/* <Nav.Link as={CustomLink} to='home#experts'>Experts</Nav.Link> */}
-                            <Nav.Link as={CustomLink} to='/addservice'>Add Service</Nav.Link>
-                            <Nav.Link as={CustomLink} to='/about'>About</Nav.Link>
-                            <Nav.Link as={CustomLink} to='/contact'>Contact</Nav.Link>
+
+                            {user?.uid
+                                && <>
+                                    <Nav.Link as={CustomLink} to='/addservice'>Add Service</Nav.Link>
+                                    <Nav.Link as={CustomLink} to='/manage'>Manage Service</Nav.Link>
+
+                                </>
+
+                            }
+                            {user?.uid
+                                ?
+                                ""
+                                :
+                                <Nav.Link as={CustomLink} to='/about'>About</Nav.Link>
+                            }
                             <NavDropdown className='p-0 text-light' title="Account" id="collasible-nav-dropdown">
                                 {user?.uid
                                     ?
@@ -43,7 +55,7 @@ const Header = () => {
                                     :
                                     <Nav.Link as={CustomLink} to='/login'>Log in</Nav.Link>
                                 }
-                                
+
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

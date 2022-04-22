@@ -20,6 +20,7 @@ import Profile from './Pages/Account/Profile/Profile';
 import RequireAuth from './Pages/Account/RequireAuth/RequireAuth';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import AddService from './Pages/AddService/AddService';
+import ManageService from './Pages/ManageService/ManageService';
 
 const App = () => {
     return (
@@ -42,6 +43,11 @@ const App = () => {
                 <Route path="/addservice" element={
                     <RequireAuth>
                         <AddService/>
+                    </RequireAuth>
+                }></Route>
+                <Route path="/manage" element={
+                    <RequireAuth>
+                        <ManageService/>
                     </RequireAuth>
                 }></Route>
                 <Route path='/profile' element={<Profile />}></Route>

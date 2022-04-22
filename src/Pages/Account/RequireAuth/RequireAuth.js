@@ -8,7 +8,7 @@ import auth from '../../../Firebase/firebase.init';
 const RequireAuth = ({ children }) => {
     const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
     const [user, loading, userError] = useAuthState(auth)
-    console.log('inside ', user)
+    // console.log('inside ', user)
     let location = useLocation();
 
     if (loading || sending) {
