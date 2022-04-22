@@ -20,7 +20,7 @@ const RequireAuth = ({ children }) => {
     }
 
 
-    else if (user?.emailVerified === false) {
+    if (user.providerData[0]?.providerId == 'password' && !user?.emailVerified ) {
         return <div className='text-light py-5 rounded-2 text-center w-50 m-auto my-3 bg-danger'>
             <h2>Your email is not verified .  </h2>
             <h2>Please check your email to verify</h2>
