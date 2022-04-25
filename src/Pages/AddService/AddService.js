@@ -18,6 +18,15 @@ const AddService = () => {
         .then(result => {
             console.log(result);
         })
+        .then(data => {
+            console.log('Success:', data);
+            
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+
     };
     return (
         <div className='text-center my-5 w-50 mx-auto'>

@@ -35,7 +35,7 @@ const App = () => {
                 <Route path='/about' element={<About />}></Route>
                 <Route path='/signup' element={<Signup />}></Route>
                 <Route path='/login' element={<Login />}></Route>
-                <Route path="/checkout" element={
+                <Route path="/checkout/:serviceId" element={
                     <RequireAuth>
                         <CheckOut/>
                     </RequireAuth>
