@@ -44,7 +44,7 @@ const CheckOut = () => {
             <form onSubmit={handlePlaceOrder}>
                 <input className='w-75 mb-3 py-2' type="text" value={user?.displayName} name='name' placeholder='Name' required disabled /> <br />
                 <input className='w-75 mb-3 py-2' type="email" value={user?.email} name='email' placeholder='Email' required disabled /> <br />
-                <input className='w-75 mb-3 py-2' type="text" value={service.name} name='service' placeholder='service' required /> <br />
+                <input className='w-75 mb-3 py-2' type="text" value={service?.name} name='service' placeholder='service' required /> <br />
                 <input className='w-75 mb-3 py-2' type="text" name='address' placeholder='Address' required /> <br />
                 <input className='w-75 mb-3 py-2' type="number" name='number' placeholder='Contact Number' required /> <br />
                 <input className='w-75 btn btn-primary' type="submit" value="Place Order" />

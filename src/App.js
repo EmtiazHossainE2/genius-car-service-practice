@@ -21,6 +21,7 @@ import RequireAuth from './Pages/Account/RequireAuth/RequireAuth';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import AddService from './Pages/AddService/AddService';
 import ManageService from './Pages/ManageService/ManageService';
+import Orders from './Pages/Orders/Orders';
 
 const App = () => {
     return (
@@ -48,6 +49,11 @@ const App = () => {
                 <Route path="/manage" element={
                     <RequireAuth>
                         <ManageService/>
+                    </RequireAuth>
+                }></Route>
+                <Route path="/orders" element={
+                    <RequireAuth>
+                        <Orders/>
                     </RequireAuth>
                 }></Route>
                 <Route path='/profile' element={<Profile />}></Route>
