@@ -23,7 +23,7 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, sendError] = useSendPasswordResetEmail(auth);
 
     if (user) {
-        
+
     }
 
 
@@ -32,14 +32,14 @@ const Login = () => {
     }
 
     //handle log in
-    const handleLogin =async e => {
+    const handleLogin = async e => {
         e.preventDefault()
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password)
-        const {data} = await axios.post('http://localhost:5000/login' , {email})
-        console.log('access token ' , data);
-        localStorage.setItem('access token' , data)
+        const { data } = await axios.post('https://stark-beach-29284.herokuapp.com/login', { email })
+        console.log('access token ', data);
+        localStorage.setItem('access token', data)
         toast.success(`Welcome Back `, { id: "welcome" });
         navigate(from, { replace: true });
     }

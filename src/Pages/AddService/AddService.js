@@ -3,31 +3,31 @@ import { useForm } from "react-hook-form";
 import toast from 'react-hot-toast';
 
 const AddService = () => {
-    const { register, handleSubmit ,reset} = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data) 
-        const url = `http://localhost:5000/service`
-        fetch(url , {
+        console.log(data)
+        const url = `https://stark-beach-29284.herokuapp.com/service`
+        fetch(url, {
             //post [10 server]
             method: "POST",
-            headers : {
-                'content-type' : 'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
-            body : JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);
-            toast.success(`New service added `, { id: "newService" });
-            reset()
-        })
-        .then(data => {
-            console.log('Success:', data);
-            
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                toast.success(`New service added `, { id: "newService" });
+                reset()
+            })
+            .then(data => {
+                console.log('Success:', data);
+
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
 
 
     };
