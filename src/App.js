@@ -26,7 +26,6 @@ import Orders from './Pages/Orders/Orders';
 const App = () => {
     return (
         <div >
-            <Toaster></Toaster>
             <Header></Header>
             <Routes>
                 <Route path='/' element={<Home />}></Route>
@@ -59,6 +58,7 @@ const App = () => {
                 <Route path='/profile' element={<Profile />}></Route>
                 <Route path='*' element={<NotFound></NotFound>}></Route>
             </Routes>
+            <Toaster></Toaster>
             <Footer></Footer>
         </div>
     );
